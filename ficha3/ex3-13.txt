@@ -1,0 +1,15 @@
+/*
+int rollDie(int low = 1, int high = 6)
+{
+assert(high >= low);
+return (rand() % (high - low + 1)) + low;
+}
+ */
+
+a) a função retorna um valor entre o indicado pelo parâmetro "low" e o "high". o statment de "assert()" serve para
+verificar se o número passado por low é de facto menor ou igual que o passado por high, gerando uma mensagem de erro
+caso isso não se verifique.
+b) pode ser usada sem parâmetros, isto é o default entre 1 e 6, pode ser passado apenas o mínimo ou apenas o valor
+máximo.
+c) não é possível, visto que a função original já abrange o caso em que não são passados parâmetros, o que torna a
+chamada da função overloaded ambígua.
