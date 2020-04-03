@@ -90,12 +90,19 @@ in the different modes after an individual game ended as well as reading
 the game instructions before starting to play.
 
 When the game goes into infinite loop, there is no way to stop it without quitting
-the program, but after 50 human plays (99 or 100 total plays), the game will 
-end in a tie.
+the program, but after 100 human plays (200 total plays), the game will 
+end in a tie. This solution is not ideal because as the user goes back to the menu and
+starts a new game, the counter does not reset.
 
 The "outcomes" function was made for the HardBot, but also supports
 input from player 1, because initially it was made thinking of a spectator mode
-(watching the bots play against each other), but that idea was discarded.
+(watching the bots play against each other), but that idea was discarded. Still
+kept it there in case a hint giving feature would be added in the future.
+
+Overall, the code can get a bit repetitive and therefore making the projet not ideally 
+organized, but without the knowledge of classes and structs when it was made,
+I would have had to pass a lot of parameters to the functions, which could
+also make it look ugly.
 
 
 ---------------------------------------------------------------------
