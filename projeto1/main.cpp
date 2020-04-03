@@ -298,7 +298,7 @@ std::vector<std::string> selectNames(int mode) {
     if (mode == 1) {
         std::cout << "Insert your name, player1 : ";
         std::cin >> name1;
-        while (std::cin.fail() || std::cin.peek() != '\n') {
+        while (std::cin.fail() || std::cin.peek() != '\n' || name1 == "EasyBot" || name1 == "HardBot") {
             std::cout << "Invalid name (whitespaces are not valid). Try again: ";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -306,7 +306,7 @@ std::vector<std::string> selectNames(int mode) {
         }
         std::cout << "Insert your name, player2 : ";
         std::cin >> name2;
-        while (std::cin.fail() || std::cin.peek() != '\n') {
+        while (std::cin.fail() || std::cin.peek() != '\n'|| name2 == "EasyBot" || name2 == "HardBot") {
             std::cout << "Invalid name (whitespaces are not valid). Try again: ";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -315,7 +315,7 @@ std::vector<std::string> selectNames(int mode) {
     } else if (mode == 2 || mode == 3) {
         std::cout << "Insert your name, player1 : ";
         std::cin >> name1;
-        while (std::cin.fail() || std::cin.peek() != '\n') {
+        while (std::cin.fail() || std::cin.peek() != '\n' || name1 == "EasyBot" || name1 == "HardBot") {
             std::cout << "Invalid name (whitespaces are not valid). Try again: ";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
