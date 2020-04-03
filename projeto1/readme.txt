@@ -12,11 +12,16 @@ Version: 1.0 (April 2020)
 This project is a simple implementation of the traditional Oware game
 that runs in the console and allows the player to play against a 
 friend or against the computer.
+
 The main goal here was to learn and get used to C++, as well as 
 making organized and readable code.
+
 The code could be a bit cleaner if structs or classes were used, but given
 that I had no experience with those and they weren't covered in class during
 the time in which this project was developed, I did not use them.
+That made it so that the functions had to take more argumments, which ended
+up making it look cluttered.
+Header files and splitting the code in different files could have helped as well.
 
 ---------------------------------------------------------------------
                            DEVELOPMENT STATE                         
@@ -75,6 +80,23 @@ work without flickering.
 
 Other than that, the game does not deal well with "big slam" situations, instead 
 it should only leave the last seed uncaptured.
+
+---------------------------------------------------------------------
+                      OBSERVATIONS AND ADDED FEATURES                         
+---------------------------------------------------------------------
+
+A menu interface was added to the game allowing the user to keep playing
+in the different modes after an individual game ended as well as reading
+the game instructions before starting to play.
+
+When the game goes into infinite loop, there is no way to stop it without quitting
+the program, but after 50 human plays (99 or 100 total plays), the game will 
+end in a tie.
+
+The "outcomes" function was made for the HardBot, but also supports
+input from player 1, because initially it was made thinking of a spectator mode
+(watching the bots play against each other), but that idea was discarded.
+
 
 ---------------------------------------------------------------------
                           SCREENS FROM THE GAME                         
