@@ -67,3 +67,69 @@ void testA() {
 
 */
 
+
+void localMax(const std::vector<std::vector<int>> &a, bool neigh8) {
+    std::vector<std::vector<int>> results;
+    if (neigh8) {
+        for (int i = 0; i < a.size(); i++) {
+            for (int j = 0; j < a.size(); j++) {
+                std::vector<int> coords = {};
+                if (i - 1 >= 0 && i + 1 < a.size() && j - 1 >= 0 && j + 1 < a.size()) {
+                    int c = a[i][j];
+                    if (c > a[i][j - 1] && c > a[i][j + 1] && c > a[i - 1][j] && c > a[i + 1][j] && c > a[i - 1][j - 1]
+                        && c > a[i - 1][j + 1] && c > a[i + 1][j - 1] && c > a[i + 1][j + 1]) {
+                        coords.push_back(i);
+                        coords.push_back(j);
+                        results.push_back(coords);
+                    }
+                }
+            }
+        }
+    } else {
+        for (int i = 0; i < NE; i ++) {
+            for (int j = 0; j < NE; j++) {
+                int c = a[i][j];
+                bool isMax = true;
+                std::vector<int> coords = {};
+                for (int sideX = -1; sideX < 2; sideX ++) {
+                    for (int sideY = -1; sideY < 2; sideY ++) {
+                        if (i + sideX >= 0 && i + sideX < a.size() && j + sideY >= 0 && j + sideY < a.size()
+                        && a[sideX+i][sideY+j] > c) {
+                            isMax = false;
+                            break;
+                        }
+                    }
+                }
+                if (isMax) {
+                    coords.push_back(i);
+                    coords.push_back(j);
+                    results.push_back(coords);
+                }
+            }
+        }
+    }
+    for (const auto &i : results) {
+        for (int j : i) {
+            std::cout << j << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void testB() {
+    bool neigh8 = false;
+    std::vector<std::vector<int>> a = {{7, 3, 4, 1, 3},
+                                       {2, 9, 6, 2, 1},
+                                       {1, 3, 5, 1, 4},
+                                       {6, 5, 2, 7, 5},
+                                       {4, 2, 1, 3, 6}};
+    localMax(a, neigh8);
+}
+
+
+
+int main() {
+    testA();
+    testB();
+}
+
