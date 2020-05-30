@@ -150,17 +150,17 @@ bool Date::isEqualTo(const Date &date) const {
     return day == date.day && month == date.month && year == date.year;
 }
 
-bool Date::isNotEqualTo(const Date &date) {
+bool Date::isNotEqualTo(const Date &date) const {
     return !isEqualTo(date);
 }
 
-bool Date::isAfter(const Date &date) {
+bool Date::isAfter(const Date &date) const {
     if (year > date.year) return true;
     else if (month > date.month) return true;
     else return day > date.day;
 }
 
-bool Date::isBefore(const Date &date) {
+bool Date::isBefore(const Date &date) const {
     return !isAfter(date) && isNotEqualTo(date);
 }
 
