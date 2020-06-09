@@ -1,4 +1,4 @@
-/*
+*/*
  * Implement and test a program that uses the class hierarchy presented in the theoretical lectures:
  * FEUP_person, Teacher and Student.
  */
