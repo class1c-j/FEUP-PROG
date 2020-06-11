@@ -28,9 +28,9 @@ public:
     void showMod();
     bool isValid(); // indicate whether the date is valid or not
     bool isEqualTo(const Date &date) const; // indicate whether the date is equal to the date received as parameter
-    bool isNotEqualTo(const Date &date); // indicate whether the date is not equal to the date received as parameter
-    bool isAfter(const Date &date); // indicate whether the date is after date received as parameter
-    bool isBefore(const Date &date); // indicate whether the dateis before the date received as parameter
+    bool isNotEqualTo(const Date &date) const; // indicate whether the date is not equal to the date received as parameter
+    bool isAfter(const Date &date) const; // indicate whether the date is after date received as parameter
+    bool isBefore(const Date &date) const; // indicate whether the dateis before the date received as parameter
 private:
     unsigned int year{};
     unsigned int month{};
@@ -155,9 +155,8 @@ bool Date::isNotEqualTo(const Date &date) const {
 }
 
 bool Date::isAfter(const Date &date) const {
-    if (year > date.year) return true;
-    else if (month > date.month) return true;
-    else return day > date.day;
+    return this->year > date.year || (this->year == date.year && (this->month > date.month || this->month == date.month
+    && this->day > date.day));
 }
 
 bool Date::isBefore(const Date &date) const {
